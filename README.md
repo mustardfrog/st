@@ -95,4 +95,3 @@ want to manually set your prefered emoji/special character font to a lower size
 in the `config.h` file to avoid this. By default, JoyPixels is used at a
 smaller size than the usual text.
 
-- [https://lukesmith.xyz](https://lukesmith.xyz)
