@@ -66,7 +66,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 3;
 
 /*
  * 1: render most of the lines/blocks characters without using the font for
@@ -153,7 +153,7 @@ static const char *colorname[] = {
 	[255] = 0,
 																      
     "#ecf0c1", // 256 -> reverse cursor
-    "#e33400", // 257 -> cursor
+    "#a2db10", // 257 -> cursor
     "#ecf0c1", // 258 -> foreground
     //"#2a2a2a", // 259 -> background
 };
