@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Ubuntu Mono:pixelsize=18:antialias=true:autohint=true";
 static char *font2[] = { "Inconsolata:pixelsize=17:antialias=true:autohint=true" };
-static int borderpx = 2;
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -107,38 +107,55 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.7;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
    	/* 8 normal colors */
-    	"#000000",
-	"#e33400",
-    	"#5ccc96",
-    	"#b3a1e6",
-   	"#00a3cc",
-	"#f2ce00",
- 	"#7a5ccc",
-	"#686f9a",
+    //"#000000",
+	//"#e33400",
+    //"#5ccc96",
+    //"#b3a1e6",
+       //"#00a3cc",
+	//"#f2ce00",
+     //"#7a5ccc",
+	//"#686f9a",
 	 
+    "#000000" ,
+    "#d54e53" ,
+    "#b9ca4a" ,
+    "#e6c547" ,
+    "#7aa6da" ,
+    "#c397d8" ,
+    "#70c0ba" ,
+    "#424242" ,
  /* 8 bright colors */
-	"#686f9a",
-	"#e33400",
-	"#5ccc96",
-	"#b3a1e6",
-	"#00a3cc",
-	"#f2ce00",
-	"#7a5ccc",
-	"#f0f1ce",
+	//"#686f9a",
+	//"#e33400",
+	//"#5ccc96",
+	//"#b3a1e6",
+	//"#00a3cc",
+	//"#f2ce00",
+	//"#7a5ccc",
+	//"#f0f1ce",
 															      
+    "#666666" ,
+    "#ff3334" ,
+    "#9ec400" ,
+    "#e7c547" ,
+    "#7aa6da" ,
+    "#b77ee0" ,
+    "#54ced6" ,
+    "#2a2a2a" ,
+
 	[255] = 0,
 																      
-	"#ecf0c1", // 256 -> reverse cursor
-	"#ecf0c1", // 257 -> cursor
-	"#ecf0c1", // 258 -> foreground
-	"#0f111b", // 259 -> background
+    "#ecf0c1", // 256 -> reverse cursor
+    "#e33400", // 257 -> cursor
+    "#ecf0c1", // 258 -> foreground
+    //"#2a2a2a", // 259 -> background
 };
 
 
@@ -275,17 +292,17 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
-	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
+	{ TERMMOD,               XK_u,           kscrollup,      {.i = -1} },
+	{ TERMMOD,               XK_d,           kscrolldown,    {.i = -1} },
 	{ MODKEY,		        XK_s,		changealpha,	{.f = -0.05} },
 	{ MODKEY,		        XK_a,		changealpha,	{.f = +0.05} },
 	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_H,           zoom,           {.f = +1} },
 	{ TERMMOD,              XK_L,           zoom,           {.f = -1} },
-	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
-	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
-	{ TERMMOD,               XK_y,           externalpipe,   {.v = openurlcmd } },
+	//{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
+	//{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
+	{ TERMMOD,              XK_y,           externalpipe,   {.v = openurlcmd } },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
